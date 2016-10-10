@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://lab-studentclaire.c9users.io/hw-html-password-studentclaire/bootstrap/homework2.html">Home</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="https://lab-studentclaire.c9users.io/hw-html-password-studentclaire/bootstrap/page2.html">what</a></li>
+        <li><a href="https://lab-studentclaire.c9users.io/hw-html-password-studentclaire/bootstrap/page3.html">how</a></li>
+        <li><a href="https://lab-studentclaire.c9users.io/hw-html-password-studentclaire/bootstrap/page4.html">done</a></li>
+        <li class="dropdown">
+          <a href="https://lab-studentclaire.c9users.io/hw-html-password-studentclaire/bootstrap/page4.html" 
+          class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="jumbotron">
+<div class="container">
+  <h1>Keep<h2> your password to yourself!</h1>
+  
+<p>好密碼的條件：愈長、愈亂、愈與個人資料無關。問題是，這樣子的密碼會不會就愈記不住？
+
+於是，某人就想啦－－既然記不住，不如就將密碼寫下來，例如，銀行密碼就寫在提款卡的背面，但是，最重要就是但是：不要直接寫。
+
+「不要直接寫」是怎麼回事－－
+</p>
+
+<p><a class="btn btn-primary btn-lg" role="button" 
+ href="https://lab-studentclaire.c9users.io/hw-html-password-studentclaire/bootstrap/page2.html">Learn more</a></p>
+</div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+<meta charset="UTF-8">
+<title>homework password</title>
+
+
+<script src="js/jquery.js"></script>
+<script src="js/seedrandom.js"></script>
+
+<style>
+#randomTable {
+    font-family: monospace;
+    font-size: 1.5em;
+    
+              }
+</style>
+
+</head>
+
+
+<body>
+	<h4>::請輸入亂數表的編號:：</h4>
+<input type="text" id="txtSeed" value="1234" />
+&nbsp;
+<input type="button" id="btnGo" value="產生亂數表" />
+
+<div id="randomTable" >
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<script>
+$("#btnGo").click(function () {
+    var result = "";
+	// 純數字:
+	var sPool = "0123456789";
+    // 數字+小寫字母: (去除 l, o)
+    // var sPool = "abcdefghijkmnpqrstuvwxyz0123456789";
+    // 數字+大小寫字母: (去除 I, O, l, o)
+    // var sPool = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz0123456789";
+
+    Math.seedrandom($("#txtSeed").val()); // 設定亂數種子
+	var iRandom = 0; var ch = "?";
+	for (iRow = 1; iRow <= 10; iRow++) {
+		var sLine = (iRow + 100).toString().substr(1, 2) + ": ";
+		for (iCol = 1; iCol <= 10; iCol++) {
+			iRandom = Math.floor(Math.random() * sPool.length);
+			ch = sPool.substr(iRandom, 1);
+			sLine += ch;
+		}
+		result += sLine + "<br>";
+	}
+	$("#randomTable").html(result);
+});
+
+</script>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    
+    
+</body>
+</html>
